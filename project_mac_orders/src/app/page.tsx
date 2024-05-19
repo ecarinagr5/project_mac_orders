@@ -8,7 +8,7 @@ export default async function Page() {
   const productos = data?.data?.products;
   return (
     <>
-        <div className="container mx-auto bg-white">
+        <div className="container mx-auto bg-white mt-10 rounded-md">
           <Suspense fallback={<div>Loading...</div>}>
             <div className="grid grid-cols-4 gap-4 p-6">
               {productos.map((product: ICardProps) => (
