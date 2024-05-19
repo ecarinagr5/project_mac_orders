@@ -1,4 +1,5 @@
 // reducers/cartReducer.ts
+"use client"
 interface Product {
     id: string;
     name: string;
@@ -6,14 +7,15 @@ interface Product {
   }
   
   interface CartItem extends Product {
+    image: string | StaticImport;
     quantity: number;
   }
   
-  interface CartState {
+  export interface CartState {
     items: CartItem[];
   }
   
-  type CartAction =
+  export type CartAction =
     | { type: 'ADD_ITEM'; payload: Product }
     | { type: 'REMOVE_ITEM'; payload: { id: string } }
     | { type: 'INCREASE_QUANTITY'; payload: { id: string } }

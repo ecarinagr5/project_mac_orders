@@ -1,5 +1,6 @@
+
 import { fetchPost } from "../../../middleware/fetchData";
-import React,{useState} from "react";
+import React from "react";
 import Image from "next/image";
 import DetailsProduct from "@/components/DetailsProduct";
 import BuyProduct from "@/components/BuyProduct";
