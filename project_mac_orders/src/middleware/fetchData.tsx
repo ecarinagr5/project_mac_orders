@@ -1,4 +1,4 @@
-import { FetchData } from "../utils/interfaces";
+import { IFetchData } from "../utils/interfaces";
 
 export const getData = async () => {
   try {

@@ -1,5 +1,5 @@
-export interface CardProps {
-  id?:string;
+export interface ICardProps {
+  id?: string;
   name: string;
   price: number;
   image: string;
@@ -7,7 +7,16 @@ export interface CardProps {
   slug: string;
 }
 
+export interface IFetchData {
+  slug: string;
+}
+export interface IDetailsProps {
+  name: string;
+  price: number;
+  description: string;
+  calorie?: string;
+}
 
-export interface FetchData {
-  slug:string;
+export interface IBuyProduct {
+  product:any
 }

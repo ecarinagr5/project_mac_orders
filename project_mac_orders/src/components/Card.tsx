@@ -1,7 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import { CardProps } from "../utils/interfaces";
+import { ICardProps } from "../utils/interfaces";
 import Link from "next/link";
+import DetailsProduct from "./DetailsProduct";
 /***
  * Functional component to render the product
  * in the menu
@@ -9,7 +10,7 @@ import Link from "next/link";
  * @{price} receive the price of the product
  ***/
 
-const Card: React.FC<CardProps> = ({
+const Card: React.FC<ICardProps> = ({
   name,
   price,
   image,
@@ -28,11 +29,12 @@ const Card: React.FC<CardProps> = ({
             layout="responsive"
           />
         </div>
-        <div className="px-6 py-4">
-          <p className="font-bold text-xl mb-2">{name}</p>
-          <p className="text-gray-400 text-base">${price}</p>
-          <p className="text-gray-700 text-base">{description}</p>
-        </div>
+        <DetailsProduct
+          name={name}
+          price={price}
+          description={description}
+          calorie={""}
+        />
         <div className="px-6 pt-4 pb-2">
           <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
             #{slug}

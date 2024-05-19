@@ -1,15 +1,18 @@
 import { fetchPost } from "../../../middleware/fetchData";
-import React from 'react';
+import React,{useState} from "react";
+import Image from "next/image";
+import DetailsProduct from "@/components/DetailsProduct";
+import BuyProduct from "@/components/BuyProduct";
+import BackButton from "@/components/BackButton";
 
-interface PostProps {
-  title: string;
-  content: string;
-}
-
-
-export default async function PostPage({ params }: { params: { slug: string } }) {
+// eslint-disable-next-line @next/next/no-async-client-component
+export default async function DetailPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const product = await fetchPost(params?.slug);
-  const {id, name, price, image, description, calorie, slug } = product;
+  const { id, name, price, image, description, calorie } = product;
 
   if (!product) {
     // If the post doesn't exist, you can return null, which will lead to a 404 page
@@ -22,8 +25,27 @@ export default async function PostPage({ params }: { params: { slug: string } })
   }
 
   return (
-    <div>
-      <h1>Hello ${product.name}</h1>
+    <div className="container mx-auto bg-white rounded-lg m-5">
+      <div key={id} className="grid grid-cols-1 p-20">
+        <BackButton />
+        <div className="h-[400px] overflow-hidden">
+          <Image
+            src={image}
+            alt={name}
+            width={200}
+            height={200}
+            layout="responsive"
+          />
+        </div>
+        <DetailsProduct
+          name={name}
+          price={price}
+          description={description}
+          calorie={calorie}
+        />
+
+        <BuyProduct product={product} />
+      </div>
     </div>
   );
 }
