@@ -20,3 +20,7 @@ export interface IDetailsProps {
 export interface IBuyProduct {
   product:any
 }
+
+export interface IRemove {
+  id:string
+}

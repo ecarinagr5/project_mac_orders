@@ -5,7 +5,7 @@ import BackButton from "@/components/BackButton";
 import { useCartState, useCartDispatch } from "../../utils/context/CartContext";
 
 // eslint-disable-next-line @next/next/no-async-client-component
-export default async function CartPage() {
+export default function CartPage() {
   const dispatch = useCartDispatch();
   const state = useCartState();
 
@@ -29,7 +29,14 @@ export default async function CartPage() {
                 </div>
                 <div> {item.name} (2) </div>
                 <div>{item.price} </div>
-                <button  onClick={() => dispatch({ type: "REMOVE_ITEM", payload: {id:item.id} })}> borrar </button>
+                <button
+                  className="bg-gray-300 border-b-4 rounded-xl py-2 w-[300px] hover:bg-yellow-600"
+                  onClick={() =>
+                    dispatch({ type: "REMOVE_ITEM", payload: { id: item.id } })
+                  }
+                >
+                  Remove
+                </button>
               </div>
             </>
           );

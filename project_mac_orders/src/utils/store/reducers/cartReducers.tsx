@@ -1,5 +1,8 @@
 // reducers/cartReducer.ts
 "use client"
+
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 interface Product {
     id: string;
     name: string;
