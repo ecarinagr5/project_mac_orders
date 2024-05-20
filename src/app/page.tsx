@@ -11,7 +11,7 @@ export default async function Page() {
         <div className="container mx-auto bg-white mt-10 rounded-md">
           <Suspense fallback={<div>Loading...</div>}>
             <div className="grid md:grid-cols-4 md:gap-4 p-6 grid-cols-1 gap-1">
-              {products.map((product: ICardProps) => (
+              {products?.map((product: ICardProps) => (
                 <Card
                   key={product.id}
                   name={product.name}
