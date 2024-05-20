@@ -24,6 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) Important keep this port
 
 ### Project Structure
 
+.. code-block:: raw
 project-root/
 │
 ├── README.md
