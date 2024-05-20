@@ -50,7 +50,7 @@ Open [http://localhost:3000](http://localhost:3000) Important keep this port
 
 - Home - Menu - Navbar
 
-![Alt text](https://github.com/ecarinagr5/project_mac_orders/images/home.png)
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/home.png)
 
 
 
