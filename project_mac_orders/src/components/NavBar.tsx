@@ -2,12 +2,13 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import { useCartState } from "../utils/context/CartContext";
 /***
  * Functional component to render Links Navbar
  ***/
 
 const NavBar: React.FC = () => {
+  const state = useCartState();
   return (
     <nav className="bg-white shadow-2xl">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -19,8 +20,6 @@ const NavBar: React.FC = () => {
               aria-controls="mobile-menu"
               aria-expanded="false"
             >
-              <span className="absolute -inset-0.5"></span>
-              <span className="sr-only">Open main menu</span>
               <svg
                 className="block h-6 w-6"
                 fill="none"
@@ -89,18 +88,34 @@ const NavBar: React.FC = () => {
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <button
-              type="button"
-              className="relative p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <Image
-                className="h-8 w-auto"
-                src="https://www.mcdonalds.com.mx/uploads/Pedi_y_Retira_2_865e42ca74.png"
-                width={300}
-                height={300}
-                alt="MacDonalds"
-              />
-            </button>
+            <Link href={"/cart"}>
+              <button
+                type="button"
+                className="relative p-1 text-gray-400 hover:text-white focus:outline-none hover:outline-none"
+              >
+                <Image
+                  className="h-8 w-auto"
+                  src="https://www.mcdonalds.com.mx/uploads/Pedi_y_Retira_2_865e42ca74.png"
+                  width={300}
+                  height={300}
+                  alt="MacDonalds"
+                />
+              </button>
+
+              <div className="relative ml-10 -mt-14">
+              <button
+                    type="button"
+                    className="relative flex rounded-full bg-yellow-macdonalds text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <div className="bg-red-macdonalds text-white rounded-full p-1">
+                      {state?.items?.length}
+                    </div>
+                  </button>
+              </div>
+            </Link>
 
             <div className="relative ml-3">
               <div>
@@ -111,8 +126,6 @@ const NavBar: React.FC = () => {
                   aria-expanded="false"
                   aria-haspopup="true"
                 >
-                  <span className="absolute -inset-1.5"></span>
-                  <span className="sr-only">Open user menu</span>
                   <div className="bg-yellow-macdonalds text-white rounded-full p-4">
                     CR
                   </div>
