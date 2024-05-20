@@ -34,7 +34,11 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
       }
       return {
         ...state,
-        items: [...state.items, { ...action.payload, quantity: 1 }],
+        items: [...state.items, {
+          ...action.payload, quantity: 1,
+          slug:  action?.payload?.slug,
+          image: action?.payload?.image
+        }],
       };
     case "REMOVE_ITEM":
       return {

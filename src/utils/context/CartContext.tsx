@@ -1,6 +1,7 @@
 "use client"
 import React, { createContext, useContext, useReducer, ReactNode, Dispatch } from 'react';
-import { cartReducer, initialState, CartState, CartAction } from '../store/reducers/cartReducers';
+import { cartReducer, initialState, CartAction } from '../store/reducers/cartReducers';
+import { CartState } from "../interfaces";
 
 const CartStateContext = createContext<CartState | undefined>(undefined);
 const CartDispatchContext = createContext<Dispatch<CartAction> | undefined>(undefined);

@@ -26,12 +26,15 @@ export interface IRemove {
 }
 
 export interface Product {
+  image: string;
+  slug: string;
   id: string;
   name: string;
   price: number;
 }
 
 export interface CartItem extends Product {
+  slug:string;
   image: string;
   quantity: number;
 }
@@ -42,10 +45,10 @@ export interface CartState {
 }
 
 export interface ICartProps {
-  slug:string;
-  quantity: number;
   id: string;
   image: string;
   name: string;
   price: number;
+  slug:string;
+  quantity: number;
 }
