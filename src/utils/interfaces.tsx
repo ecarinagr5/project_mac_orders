@@ -42,6 +42,8 @@ export interface CartState {
 }
 
 export interface ICartProps {
+  slug:string;
+  quantity: number;
   id: string;
   image: string;
   name: string;

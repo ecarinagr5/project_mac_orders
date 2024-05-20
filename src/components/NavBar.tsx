@@ -9,6 +9,11 @@ import { useCartState } from "../utils/context/CartContext";
 
 const NavBar: React.FC = () => {
   const state = useCartState();
+  const amountProduct =  state?.items?.reduce(
+    (sum: any, item: { quantity: any }) => sum + item.quantity,
+    0
+  );
+
   return (
     <nav className="bg-white shadow-2xl">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -111,7 +116,7 @@ const NavBar: React.FC = () => {
                     aria-haspopup="true"
                   >
                     <div className="bg-red-macdonalds text-white rounded-full p-1">
-                      {state?.items?.length}
+                      {amountProduct}
                     </div>
                   </button>
               </div>

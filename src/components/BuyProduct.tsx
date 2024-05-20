@@ -13,16 +13,27 @@ import Link from "next/link";
 const BuyProduct: React.FC<IBuyProduct> = ({ product }) => {
   const dispatch = useCartDispatch();
   const state = useCartState();
-  const value = state?.items[0];
+  const value = state?.items?.find(
+    (item: { id: any }) => item.id === product.id
+  );
+
+  const handleBuy = (product: any) => {
+    const isProductInCart = state?.items?.find(
+      (item: { id: any }) => item.id === product.id
+    );
+    if (isProductInCart)
+      dispatch({ type: "INCREASE_QUANTITY", payload: { id: product.id } });
+    else dispatch({ type: "ADD_ITEM", payload: product });
+  };
 
   return (
     <div className="mx-auto">
       <Link href={"/cart"}>
         <button
           className="bg-gray-300 border-b-4 rounded-xl py-2 w-[300px] hover:bg-yellow-600 hover:text-white"
-          onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}
+          onClick={() => handleBuy(product)}
         >
-          Add Cart {value ? "(1)" : ""}
+          Add Cart {value ? `(${value.quantity})` : ""}
         </button>
       </Link>
     </div>

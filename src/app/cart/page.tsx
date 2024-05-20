@@ -11,7 +11,9 @@ export default function CartPage() {
   const dispatch = useCartDispatch();
   const state = useCartState();
   const totalPrice = state?.items?.reduce(
-    (sum: any, item: { price: any }) => sum + item.price,
+    (sum: any, item: {
+      quantity: any; price: any 
+}) => sum + (item.price * item?.quantity),
     0
   );
 
@@ -39,9 +41,11 @@ export default function CartPage() {
       </div>
       <div className="container mx-auto">
         {state?.items?.map((item: ICartProps) => {
+          const total = item?.quantity * item?.price
           return (
             <>
               <div key={item.id} className="flex container-image-cart">
+                <Link href={`/details/${encodeURIComponent(item?.slug)}`}>
                 <div className="max-w-sm flex-col justify-star">
                   <Image
                     src={item.image}
@@ -51,13 +55,14 @@ export default function CartPage() {
                     className="rounded-full image-cart"
                   />
                 </div>
+                </Link>
                 <div className="text-center flex-col p-10">
                   <div className="flex p-5">
                     <div className="w-[200px]">
-                      <div className="p-2 font-bold"> {item.name} (1) </div>
+                      <div className="p-2 font-bold"> {item.name} ({item?.quantity})  </div>
                       <div className="text-yellow-macdonalds font-bold ">
                         {" "}
-                        ${item.price}{" "}
+                        ${total}{" "}
                       </div>
                     </div>
                     <button
