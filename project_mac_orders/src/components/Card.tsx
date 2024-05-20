@@ -20,13 +20,14 @@ const Card: React.FC<ICardProps> = ({
   return (
     <div className="max-w-sm overflow-hidden shadow-lg rounded-lg">
       <Link href={`/details/${encodeURIComponent(slug)}`}>
-        <div className="h-[400px] overflow-hidden">
+        <div className="h-[400px] overflow-hidden container-image">
           <Image
             src={image}
             alt={name}
             width={200}
             height={200}
             layout="responsive"
+            className="image"
           />
         </div>
         <DetailsProduct

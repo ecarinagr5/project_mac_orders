@@ -21,7 +21,7 @@ const BuyProduct: React.FC<IBuyProduct> = ({ product }) => {
     <div className="mx-auto">
       <Link href={"/cart"}>
         <button
-          className="bg-gray-300 border-b-4 rounded-xl py-2 w-[300px] hover:bg-yellow-600"
+          className="bg-gray-300 border-b-4 rounded-xl py-2 w-[300px] hover:bg-yellow-600 hover:text-white"
           onClick={() => dispatch({ type: "ADD_ITEM", payload: product })}
         >
           Add Cart {value ? "(1)" : ""}

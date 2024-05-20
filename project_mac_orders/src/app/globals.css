@@ -31,3 +31,29 @@ body {
     text-wrap: balance;
   }
 }
+
+.container-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px; /* Center the image vertically within the viewport height */
+}
+
+.image {
+  width: 100px; /* Set the desired width */
+  height: 100px; /* Set the desired height */
+  object-fit: cover; /* Ensures the image covers the given dimensions */
+}
+
+.container-image-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Center the image vertically within the viewport height */
+}
+
+.image-main{
+  width: 400px; /* Set the desired width */
+  height: 400px; /* Set the desired height */
+  object-fit: cover; /* Ensures the image covers the given dimensions */
+}

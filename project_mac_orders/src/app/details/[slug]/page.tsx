@@ -29,13 +29,14 @@ export default async function DetailPage({
     <div className="container mx-auto bg-white rounded-lg m-5">
       <div key={id} className="grid grid-cols-1 p-20">
         <BackButton />
-        <div className="h-[400px] overflow-hidden">
+        <div className="h-[600px] overflow-hidden container-image-main w-full p-60">
           <Image
             src={image}
             alt={name}
-            width={200}
-            height={200}
+            width={600}
+            height={600}
             layout="responsive"
+            className="image-main"
           />
         </div>
         <DetailsProduct

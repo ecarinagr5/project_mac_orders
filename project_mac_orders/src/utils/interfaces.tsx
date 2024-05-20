@@ -24,3 +24,20 @@ export interface IBuyProduct {
 export interface IRemove {
   id:string
 }
+
+
+export interface Product {
+  id: string;
+  name: string;
+  price: number;
+}
+
+export interface CartItem extends Product {
+  image: string;
+  quantity: number;
+}
+
+export interface CartState {
+  items: CartItem[];
+  amount:number;
+}
