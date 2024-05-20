@@ -50,6 +50,28 @@ project-root/
 │ └─── interfaces  - Organize all the interfaces and types
 └── LICENSE
 
+project_name
+├── docs
+│   ├── make.bat
+│   ├── Makefile
+│   └── source
+│       ├── conf.py
+│       └── index.rst
+├── examples
+│   └── example.py
+├── src
+│   └── package_name
+│       └── __init__.py
+├── tests
+│   └── __init__.py
+├── .gitignore
+├── LICENSE.txt
+├── MANIFEST.in
+├── README.rst
+├── requirements.txt
+├── setup.cfg
+├── setup.py
+└── tox.ini
 
 ## You'll see the following Views
 
@@ -63,11 +85,11 @@ project-root/
 
 -  Shopping Cart
 
-![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/shopincart.png)
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/shopingcart.png)
 
 - Order confirmation
 
-![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/oderconfirmation.png)
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/orderconfirmation.png)
 - footer
 
 ![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/footer.png)
