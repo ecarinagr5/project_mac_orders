@@ -25,7 +25,7 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
       if (existingItem) {
         return {
           ...state,
-          items: state.items.map((item) =>
+          items: state.items?.map((item) =>
             item.id === action.payload.id
               ? { ...item, quantity: item.quantity + 1 }
               : item
@@ -48,7 +48,7 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
     case "INCREASE_QUANTITY":
       return {
         ...state,
-        items: state.items.map((item) =>
+        items: state.items?.map((item) =>
           item.id === action.payload.id
             ? { ...item, quantity: item.quantity + 1 }
             : item
@@ -57,8 +57,7 @@ export function cartReducer(state: CartState, action: CartAction): CartState {
     case "DECREASE_QUANTITY":
       return {
         ...state,
-        items: state.items
-          .map((item) =>
+        items: state.items?.map((item) =>
             item.id === action.payload.id && item.quantity > 1
               ? { ...item, quantity: item.quantity - 1 }
               : item
