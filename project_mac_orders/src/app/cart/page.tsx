@@ -4,13 +4,16 @@ import Image from "next/image";
 import BackButton from "@/components/BackButton";
 import Link from "next/link";
 import { useCartState, useCartDispatch } from "../../utils/context/CartContext";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { ICartProps } from "../../utils/interfaces";
 
 // eslint-disable-next-line @next/next/no-async-client-component
 export default function CartPage() {
   const dispatch = useCartDispatch();
   const state = useCartState();
-  const totalPrice = state?.items?.reduce((sum: any, item: { price: any; }) => sum + item.price, 0);
+  const totalPrice = state?.items?.reduce(
+    (sum: any, item: { price: any }) => sum + item.price,
+    0
+  );
 
   return (
     <div className="container mx-auto bg-white rounded-lg m-5 p-5">
@@ -20,52 +23,55 @@ export default function CartPage() {
         Total Payment: ${totalPrice}
       </h2>
       <div className="text-center m-2">
-      <Link href="/confirmation">
-      <button
-        className="bg-yellow-macdonalds text-white border-b-4 rounded-xl py-2 w-[300px] hover:bg-gray-300 mt-2 hover:text-black"
-        onClick={() =>
-          dispatch({
-            type: "TOTAL_AMOUNT",
-            payload: { amount: totalPrice },
-          })
-        }
-      >
-        Pay Order
-      </button>
-      </Link>
+        <Link href="/confirmation">
+          <button
+            className="bg-yellow-macdonalds text-white border-b-4 rounded-xl py-2 w-[300px] hover:bg-gray-300 mt-2 hover:text-black"
+            onClick={() =>
+              dispatch({
+                type: "TOTAL_AMOUNT",
+                payload: { amount: totalPrice },
+              })
+            }
+          >
+            Pay Order
+          </button>
+        </Link>
       </div>
-      <div className="grid grid-cols-4 gap-4 p-6 text-left mt-2">
-        {state?.items?.map((item: { id: React.Key | null | undefined; image: string | StaticImport; name: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | Promise<React.AwaitedReactNode> | null | undefined; price: string | number | bigint | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<React.AwaitedReactNode> | null | undefined; }) => {
+      <div className="container mx-auto">
+        {state?.items?.map((item: ICartProps) => {
           return (
             <>
-              <div key={item.id}>
-                <div className="rounded-2xl h-[400px] overflow-hidden container-image">
+              <div key={item.id} className="flex container-image-cart">
+                <div className="max-w-sm flex-col justify-star">
                   <Image
                     src={item.image}
                     alt={item.name}
-                    width={200}
-                    height={200}
-                    layout="responsive"
-                    className="rounded-2xl"
+                    width={150}
+                    height={150}
+                    className="rounded-full image-cart"
                   />
                 </div>
-                <div className="text-center">
-                  <div className="p-2 font-bold"> {item.name} (1) </div>
-                  <div className="text-yellow-macdonalds font-bold ">
-                    {" "}
-                    ${item.price}{" "}
+                <div className="text-center flex-col p-10">
+                  <div className="flex p-5">
+                    <div className="w-[200px]">
+                      <div className="p-2 font-bold"> {item.name} (1) </div>
+                      <div className="text-yellow-macdonalds font-bold ">
+                        {" "}
+                        ${item.price}{" "}
+                      </div>
+                    </div>
+                    <button
+                      className="bg-gray-300 border-b-4 rounded-xl w-[100px] hover:bg-yellow-600 ml-10 hover:text-white text-xs py-1"
+                      onClick={() =>
+                        dispatch({
+                          type: "REMOVE_ITEM",
+                          payload: { id: item.id },
+                        })
+                      }
+                    >
+                      Remove
+                    </button>
                   </div>
-                  <button
-                    className="bg-gray-300 border-b-4 rounded-xl py-2 w-[300px] hover:bg-yellow-600 mt-2 hover:text-white"
-                    onClick={() =>
-                      dispatch({
-                        type: "REMOVE_ITEM",
-                        payload: { id: item.id },
-                      })
-                    }
-                  >
-                    Remove
-                  </button>
                 </div>
               </div>
             </>

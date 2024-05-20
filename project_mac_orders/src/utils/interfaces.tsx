@@ -18,13 +18,12 @@ export interface IDetailsProps {
 }
 
 export interface IBuyProduct {
-  product:any
+  product: any;
 }
 
 export interface IRemove {
-  id:string
+  id: string;
 }
-
 
 export interface Product {
   id: string;
@@ -39,5 +38,12 @@ export interface CartItem extends Product {
 
 export interface CartState {
   items: CartItem[];
-  amount:number;
+  amount: number;
+}
+
+export interface ICartProps {
+  id: string;
+  image: string;
+  name: string;
+  price: number;
 }
