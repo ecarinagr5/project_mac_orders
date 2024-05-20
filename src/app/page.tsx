@@ -5,13 +5,13 @@ import { getData } from "../middleware/fetchData";
 
 export default async function Page() {
   const data = await getData();
-  const productos = data?.data?.products;
+  const products = data?.data?.products;
   return (
     <>
         <div className="container mx-auto bg-white mt-10 rounded-md">
           <Suspense fallback={<div>Loading...</div>}>
-            <div className="grid grid-cols-4 gap-4 p-6">
-              {productos.map((product: ICardProps) => (
+            <div className="grid md:grid-cols-4 md:gap-4 p-6 grid-cols-1 gap-1">
+              {products.map((product: ICardProps) => (
                 <Card
                   key={product.id}
                   name={product.name}

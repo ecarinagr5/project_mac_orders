@@ -17,7 +17,7 @@ const DetailsProduct: React.FC<IDetailsProps> = ({
   calorie,
 }) => {
   return (
-    <div className="px-6 py-4">
+    <div className="md:px-6 md:py-4 py-2">
       <p className={`${"font-bold mb-2"} ${calorie ? "text-5xl": "text-xl"}`}>{name}</p>
       <p className={`${"text-gray-400"} ${calorie ? "text-3xl": "text-base"}`}>${price}</p>
       <p className={`${"text-gray-700"} ${calorie ? "text-xl mt-2": "text-base"}`}>{description}</p>
