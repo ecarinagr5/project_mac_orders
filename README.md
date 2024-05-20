@@ -24,7 +24,7 @@ Open [http://localhost:3000](http://localhost:3000) Important keep this port
 
 ### Project Structure
 
-
+```
 project-root/
 │
 ├── README.md
@@ -50,44 +50,7 @@ project-root/
 │ └─── store  - useReducer to handle the state
 │ └─── interfaces  - Organize all the interfaces and types
 └── LICENSE
-
-
-Structuring a repository
-------------------------
-An integral part of having reusable code is having a sensible repository
-structure. That is, which files do we have and how do we organise them.
-Unfortunately, figuring out how to structure a Python project best is not
-a trivial task. In this part of the tutorial, I hope to show you a way
-to initate any Python project to ensure that you won't have to do major
-effort restructuring the code once you want to publish it.  
-
-Let us start with the folder layout. Your project directory should
-be structured in the following way and we will explain why later.
-
-.. code-block:: raw
-   
-   project_name
-   ├── docs
-   │   ├── make.bat
-   │   ├── Makefile
-   │   └── source
-   │       ├── conf.py
-   │       └── index.rst
-   ├── examples
-   │   └── example.py
-   ├── src
-   │   └── package_name
-   │       └── __init__.py
-   ├── tests
-   │   └── __init__.py
-   ├── .gitignore
-   ├── LICENSE.txt
-   ├── MANIFEST.in
-   ├── README.rst
-   ├── requirements.txt
-   ├── setup.cfg
-   ├── setup.py
-   └── tox.ini
+```
 
 
 ## You'll see the following Views
