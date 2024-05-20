@@ -21,29 +21,34 @@ Open [http://localhost:3000](http://localhost:3000) Important keep this port
 - createContext - to handle in the full app the data
 - Jest and RTL - Unit Test
 
-## Project Structure
 
--src
--- app
----- api
------ products - Call API data
----- cart - View
----- confirmation - View
----- details/[slug] - Product Details View (Dynamic Route)
----- app.tsx - Home View
--- components
----- BackButton.tsx
----- BuyProduct.tsx 
----- Card.tsx
----- DetailsProduct.tsx
----- Footer.tsx
----- NavBar.tsx
--- middleware - Call from client-side to server-side
--- test - Unit test
--- utils 
---- context - Handle Cart data in the entire app
---- store - useReducer to handle the state
---- interfaces.tsx - Organize all the interfaces and types
+### Project Structure
+
+project-root/
+│
+├── README.md
+├── src/
+│ ├── app
+│ ├─── api
+│ │ ├── products
+│ └─── cart - Cart view with all producs
+│ └─── confirmation - Confirmation once the payment is acepted View
+│ └─── details/[slug]  - Product Details View (Dynamic Route)
+│ └─── page.tsx  - Home View
+├── components
+│ └── BackButton.tsx
+│ └── BuyProduct.tsx 
+│ └── Card.tsx
+│ └── DetailsProduct.tsx
+│ └── Footer.tsx
+│ └── NavBar.tsx
+├── middleware  - Call from client-side to server-side
+├── test - Unit test
+├── utils
+│ └─── context - Handle Cart data in the entire app
+│ └─── store  - useReducer to handle the state
+│ └─── interfaces  - Organize all the interfaces and types
+└── LICENSE
 
 
 ## You'll see the following Views
@@ -52,7 +57,20 @@ Open [http://localhost:3000](http://localhost:3000) Important keep this port
 
 ![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/home.png)
 
+-  Product Details 
 
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/details.png)
+
+-  Shopping Cart
+
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/shopincart.png)
+
+- Order confirmation
+
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/oderconfirmation.png)
+- footer
+
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/footer.png)
 
 ## Deploy on Vercel
 
