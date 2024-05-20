@@ -5,11 +5,9 @@ import { useCartState, useCartDispatch } from "../utils/context/CartContext";
 import Link from "next/link";
 
 /***
- * Functional component to render the product
- * Details product
- * @{name} receive the name of the product
- * @{price} receive the price of the product
- * @{image} receive the price of the product
+ * Functional component to render the Buy product
+ * Details props
+ * @{product} full product to show the data
  ***/
 
 const BuyProduct: React.FC<IBuyProduct> = ({ product }) => {

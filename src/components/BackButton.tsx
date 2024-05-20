@@ -8,8 +8,6 @@ import Link from "next/link";
  ***/
 
 const BackButton: React.FC = () => {
-  //const [add, setAdd] = useState(0);
-
   return (
     <div className="tex-left p-2">
       <Link href={"/"}>

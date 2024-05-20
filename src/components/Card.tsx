@@ -8,6 +8,9 @@ import DetailsProduct from "./DetailsProduct";
  * in the menu
  * @{name} receive the name of the product
  * @{price} receive the price of the product
+ * @{image} receive the image of the product
+ * @{description} receive the description of the product
+ * @{slug} receive the slug to link
  ***/
 
 const Card: React.FC<ICardProps> = ({

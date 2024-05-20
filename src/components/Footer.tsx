@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 /***
- * Functional component to render Links Navbar
+ * Functional component to render Footer
  ***/
 
 const Footer: React.FC = () => {
