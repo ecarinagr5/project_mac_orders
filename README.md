@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started MacDonald's Take Home
 
-This project is building using app route ( the new way to handle the routes of NextJS), also I got the knowledge to handle the routes with pages.
+This project is building using app route of NextJS 13, also I got the knowledge to handle the routes with pages and server side props. Thanks
 
 ## Features
 
@@ -18,6 +18,8 @@ This project is building using app route ( the new way to handle the routes of N
 - Components
 - Settings in next.config.js
 - Structure of commits
+- TS interfaces and comments on each component
+- Tailwind CSS styles and a little responsive
 
 
 ## Run the project
