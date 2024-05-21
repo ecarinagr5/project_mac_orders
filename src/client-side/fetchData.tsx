@@ -7,7 +7,7 @@
 export const getData = async () => {
   try {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_PATH}/api/products`
+      `https://project-mac-orders.vercel.app/api/products`
     );
 
     if (!res.ok) {
