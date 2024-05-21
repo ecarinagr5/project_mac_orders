@@ -3,16 +3,18 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useCartState } from "../utils/context/CartContext";
+import { useSession, signOut } from "next-auth/react";
 /***
  * Functional component to render Links Navbar
  ***/
 
 const NavBar: React.FC = () => {
   const state = useCartState();
-  const amountProduct =  state?.items?.reduce(
+  const amountProduct = state?.items?.reduce(
     (sum: any, item: { quantity: any }) => sum + item.quantity,
     0
   );
+  const { data: session } = useSession();
 
   return (
     <nav className="bg-white shadow-2xl">
@@ -108,22 +110,6 @@ const NavBar: React.FC = () => {
               </button>
 
               <div className="relative ml-10 -mt-14">
-              <button
-                    type="button"
-                    className="relative flex rounded-full bg-yellow-macdonalds text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-                    id="user-menu-button"
-                    aria-expanded="false"
-                    aria-haspopup="true"
-                  >
-                    <div className="bg-red-macdonalds text-white rounded-full p-1">
-                      {amountProduct}
-                    </div>
-                  </button>
-              </div>
-            </Link>
-
-            <div className="relative ml-3">
-              <div>
                 <button
                   type="button"
                   className="relative flex rounded-full bg-yellow-macdonalds text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -131,12 +117,41 @@ const NavBar: React.FC = () => {
                   aria-expanded="false"
                   aria-haspopup="true"
                 >
-                  <div className="bg-yellow-macdonalds text-white rounded-full p-4">
-                    CR
+                  <div className="bg-red-macdonalds text-white rounded-full p-1">
+                    {amountProduct}
                   </div>
                 </button>
               </div>
+            </Link>
+
+            <div className="relative ml-3">
+              <div>
+                {session ? (
+                  <>
+                    <p className="absolute top-2 left-20">Welcome {session?.user?.name}!</p>
+                    <button
+                      type="button"
+                      className="relative flex rounded-full bg-yellow-macdonalds text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                      id="user-menu-button"
+                      aria-expanded="false"
+                      aria-haspopup="true"
+                    >
+                      <div className="bg-yellow-macdonalds text-white rounded-full p-2">
+                        UT
+                      </div>
+                    </button>
+                    <button onClick={() => signOut()} className="text-bold hover:text-yellow-macdonalds">Sign Out</button>
+                  </>
+                ) : (
+                  <Link href="/auth/signin">
+                    <p className="bg-yellow-macdonalds p-4 text-black font-bold hover:bg-slate-500 hover:text-white shadow-md rounded-lg">
+                      signin
+                    </p>
+                  </Link>
+                )}
+              </div>
             </div>
+            
           </div>
         </div>
       </div>

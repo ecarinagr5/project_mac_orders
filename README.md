@@ -4,14 +4,30 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 This project is building using app route ( the new way to handle the routes of NextJS), also I got the knowledge to handle the routes with pages.
 
-First, run the development server:
+## Features
+
+- Menu Products
+- Page Details of each product with Dinamyc Route
+- Add Product (1 or more products)
+- Remove Product
+- Pay Order - Confirmation View
+- Button New Order to clean Store or State Management
+- UseReducer to Shopping Cart
+- Signin Context and NavBar with username (It's open to any user in order you can see the functionality)
+- Testing e2e of views with Playwright
+- Components
+- Settings in next.config.js
+- Structure of commits
+
+
+## Run the project
 ```bash
 
 yarn install
 yarn dev
 
 ```
-
+## .env with Port 3000
 Open [http://localhost:3000](http://localhost:3000) Important keep this port 
 
 ## Tech Details
@@ -35,6 +51,7 @@ project-root/
 │ └─── cart - Cart view with all producs
 │ └─── confirmation - Confirmation once the payment is acepted View
 │ └─── details/[slug]  - Product Details View (Dynamic Route)
+│ └─── auth/signin - Signin you can use any user, it's a demo
 │ └─── page.tsx  - Home View
 ├── components
 │ └── BackButton.tsx
@@ -70,6 +87,11 @@ project-root/
 - Order confirmation
 
 ![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/orderconfirmation.png)
+
+- Signin
+
+![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/Signin.png)
+
 - footer
 
 ![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/footer.png)
@@ -88,8 +110,7 @@ I added some test e2e, you'll see the commands in package.json
 
 ![Alt text](https://github.com/ecarinagr5/project_mac_orders/blob/main/images/playwrighttest.png)
 
-## Deploy on Vercel
+## ENV VARS
+NEXT_PUBLIC_BASE_PATH:http://localhost:3000
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

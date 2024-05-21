@@ -1,5 +1,5 @@
 
-import { fetchPost } from "../../../middleware/fetchData";
+import { fetchPost } from "../../../client-side/fetchData";
 import React from "react";
 import Image from "next/image";
 import DetailsProduct from "@/components/DetailsProduct";

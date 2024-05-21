@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import Card from "../components/Card";
 import { ICardProps } from "../utils/interfaces";
-import { getData } from "../middleware/fetchData";
+import { getData } from "../client-side/fetchData";
 
 export default async function Page() {
   const data = await getData();
