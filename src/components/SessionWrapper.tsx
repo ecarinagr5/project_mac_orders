@@ -1,15 +1,20 @@
-'use client'; 
+"use client";
 
-import { SessionProvider } from 'next-auth/react';
+import { SessionProvider } from "next-auth/react";
 
 /***
- * This component is to render the context provider 
+ * This component is to render the context provider
  * in layout
  ** @{children} to show the data
  ** @{session} to keep the session the data
  ***/
 
-const SessionWrapper = ({ children, session }) => {
+interface ISessionProps {
+  children: any;
+  session: any;
+}
+
+const SessionWrapper: React.FC<ISessionProps> = ({ children, session }) => {
   return <SessionProvider session={session}>{children}</SessionProvider>;
 };
 
