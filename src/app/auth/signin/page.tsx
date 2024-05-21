@@ -23,6 +23,7 @@ export default function SignIn() {
       router.push('/')
     } else {
       console.error("Login error", res.error);
+      router.push('/')
     }
   };
 
